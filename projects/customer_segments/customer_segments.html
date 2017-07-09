@@ -11782,7 +11782,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11969,7 +11969,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
@@ -12098,7 +12098,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Make a copy of the DataFrame, using the &#39;drop&#39; function to drop the given feature</span>
@@ -12125,7 +12125,7 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>-2.16059627149
+<pre>-2.8530805095
 </pre>
 </div>
 </div>
@@ -12170,7 +12170,7 @@ This means that the feature is necessary because other features are doing a very
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Produce a scatter matrix for each pair of features in the data</span>
@@ -14827,7 +14827,7 @@ MzMzMzMzs7b8P6YbhZeIVDkmAAAAAElFTkSuQmCC
 <code>Grocery</code> and <code>Detergents_Paper</code> have some linear correlation.
 It doesn't exactly confirm or deny my suspicions about the relevance of the feature I attempted to predict. It just shows that it's possible to predict <code>Grocery</code> from <code>Detergents_Paper</code> and vice versa. There seems to be a looser linear relationship between these two and <code>Milk</code>.</p>
 <p><code>Delicatessen</code> doesn't seem to have any correlation with any other feature.</p>
-<p>The data for those features seem to be normally distributed.</p>
+<p>The data for those features seem to be positively skewed.</p>
 
 </div>
 </div>
@@ -14859,7 +14859,7 @@ It doesn't exactly confirm or deny my suspicions about the relevance of the feat
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Scale the data using the natural logarithm</span>
@@ -20559,7 +20559,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># For each feature find the data points with extreme high or low values</span>
@@ -20588,6 +20588,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 
 <span class="k">print</span> <span class="s2">&quot;There are &#39;{}&#39; outliers&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">outliers</span><span class="p">))</span>
 <span class="k">print</span> <span class="s2">&quot;There are &#39;{}&#39; duplicate outliers&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">duplicate_outliers</span><span class="p">))</span>
+<span class="k">print</span> <span class="s2">&quot;These are the duplicate outliers &#39;{}&#39; &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">duplicate_outliers</span><span class="p">)</span>
 
 <span class="c1"># Remove the outliers, if any were specified</span>
 <span class="n">good_data</span> <span class="o">=</span> <span class="n">log_data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">log_data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">duplicate_outliers</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
@@ -21223,6 +21224,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are &#39;48&#39; outliers
 There are &#39;5&#39; duplicate outliers
+These are the duplicate outliers &#39;[128, 65, 66, 75, 154]&#39; 
 </pre>
 </div>
 </div>
@@ -21247,7 +21249,9 @@ There are &#39;5&#39; duplicate outliers
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Yes, there are 5 outlier data points that appear in more than one feature. They should be removed, because appearing as outliers in more than one feature means they're probably actually outlers and as such need to be removed so as not to skew further analysis.</p>
+<p>Yes, there are 5 outlier data points that appear in more than one feature.</p>
+<p>These are the duplicate outliers [128, 65, 66, 75, 154]</p>
+<p>They should be removed, because appearing as outliers in more than one feature means they're probably actually outlers and as such need to be removed so as not to skew further analysis.</p>
 
 </div>
 </div>
@@ -21279,7 +21283,7 @@ There are &#39;5&#39; duplicate outliers
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with the same number of dimensions as features</span>
@@ -21291,6 +21295,8 @@ There are &#39;5&#39; duplicate outliers
 
 <span class="c1"># Generate PCA results plot</span>
 <span class="n">pca_results</span> <span class="o">=</span> <span class="n">vs</span><span class="o">.</span><span class="n">pca_results</span><span class="p">(</span><span class="n">good_data</span><span class="p">,</span> <span class="n">pca</span><span class="p">)</span>
+
+<span class="c1"># print pca_results.cumsum()</span>
 </pre></div>
 
 </div>
@@ -21907,14 +21913,14 @@ RU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>
-The first and second Principal Components explain 71.9% of the variance.
+<p><strong>Answer:</strong></p>
+<p>The first and second Principal Components explain 71.9% of the variance.
 The first four explain 93.14% of the total variance.</p>
 <ul>
-<li>PC1 is mostly described by <code>Detergents_Paper</code>, <code>Milk</code> and <code>Grocery</code>. All three of these features seem to increase with increases in the other, which confirms my observation that they're directly linearly related. An increase in PC1 causes an increase in all 3.</li>
-<li>PC2 is mostly described by increases in <code>Frozen</code>, <code>Delicatessen</code> and <code>Frozen</code>. Seems to be described by the features that aren't majorly represented in PC1. An increase in PC2 causes and increase in all 3.</li>
-<li>An increase in PC3 corresponds to an increase in <code>Fresh</code> and a decrease in <code>Delicatessen</code>. Those pretty much mostly describe PC3.</li>
-<li>An increase in PC4 corresponds to an increase in <code>Frozen</code> and a decrease in <code>Delicatessen</code>.</li>
+<li>PC1 is mostly described by <code>Detergents_Paper</code>, <code>Milk</code> and <code>Grocery</code>. All three of these features seem to increase with increases in the other, which confirms my observation that they're directly linearly related. An increase in PC1 causes an increase in all 3. This kind of spending is best represented by spending on retail goods.</li>
+<li>PC2 is mostly described by increases in <code>Fresh</code>, <code>Delicatessen</code> and <code>Frozen</code>. Seems to be described by the features that aren't majorly represented in PC1. An increase in PC2 causes and increase in all 3. This kind of spending is best represented by spending on food service goods.</li>
+<li>An increase in PC3 corresponds to an increase in <code>Fresh</code> and a decrease in <code>Delicatessen</code>. Those pretty much mostly describe PC3. This kind of spending is best represented by spending on food service goods.</li>
+<li>An increase in PC4 corresponds to an increase in <code>Frozen</code> and a decrease in <code>Delicatessen</code>. This kind of spending is best represented by spending on food service goods.</li>
 </ul>
 
 </div>
